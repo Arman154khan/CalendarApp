@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <mate charest="utf-8" />
+        <title>Track Log</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 15px;
+            }
+
+            th {
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        {{#if dateString}}
+        <h3>Filter: {{dateString}}</h3>
+        {{/if}}
+        {{#if logs}}    
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>IP Address</th>
+                <th>XYLatLng</th>
+                <th>Buffer</th>
+                <th>Address Type</th>
+                <th>Other Features</th>
+            </tr>
+            {{#each logs}}
+            <tr>
+                <td>{{this.date}}</td>
+                <td>{{this.functionName}}</td>
+                <td>{{this.userIP}}</td>
+                <td>{{this.geocodeData.XYLatLng}}</td>
+                <td>{{this.geocodeData.buffer}}</td>
+                <td>{{this.geocodeData.addressType}}</td>
+                <td>{{this.geocodeData.otherFeatures}}</td>
+            </tr>
+            {{/each}}
+        </table>
+        <br>
+        <h3>Number of logs: {{logs.length}}</h3>
+        {{/if}}
+        {{#else}}
+        <h3>No logs</h3>
+        {{/else}}
+    </body>
+</html>

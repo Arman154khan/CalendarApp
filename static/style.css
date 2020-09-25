@@ -1,0 +1,33 @@
+*::before, *::after, * {
+     box-sizing: border-box;
+}
+
+body {
+    background-color: wheat;
+}
+
+.strength-meter {
+    position: relative;
+    height: 0.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    background-color: lightgray;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.strength-meter::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: calc(1% * var(--strength, 0));
+    background-color: var(--color, "black");
+    border-radius: 1rem;
+    transition: width 500ms;
+}
+
+.reasons > * {
+    margin-top: .5rem;
+    color: dimgrey
+}

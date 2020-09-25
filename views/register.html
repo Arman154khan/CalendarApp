@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+
+<body>
+    <div class="col-md-8 mx-auto">
+        <div class="card card-body" style="margin-top: 250px;">
+            <h3 class="text-dark font-weight-bold">Register</h3>
+            <br>
+            <form method="post" id="register">
+                <div class="form-group">
+                    <input type="text" class="username-input form-control" name="username" id="username-input"
+                        placeholder="Username..." />
+                    <br>
+
+                    <input type="text" class="password-input form-control" name="password" id="password-input"
+                        placeholder="Password..." />
+                    <br>
+                    <div class="strength-meter" id="strength-meter"></div>
+                    <h6 class="strongName text-left" name="strongName" id="strongName"></h6>
+                    <div class="reasons" id="reasons"></div>
+
+                    <br>
+                    <input type="text" class="confirm-input form-control" name="confirm" id="confirm-input"
+                        placeholder="Confirm Password..." />
+                </div>
+                <button id="butReg" type="submit" class="btn btn-success button" action="../calendar/register"
+                    style="float:right;">Register
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
