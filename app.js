@@ -22,8 +22,8 @@ mongoose.Promise = global.Promise
 const http = require('http')
 const port = process.env.PORT || 4500
 
-app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 const calendarRoute = require('./routes/calendar')
 

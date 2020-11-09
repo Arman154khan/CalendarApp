@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <button style="height: 200px; width:200px;" onclick="fire3d()"></button>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <html>
+
+    <head>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    </head>
+
+    </html>
+
+    <script>
+
+        function fire3d(data) {
+            var form = new FormData()
+            form.append("email", "")
+            form.append("password", "")
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://www.onemap3d.gov.sg/privateapi/privateapi/auth/post/getToken",
+                "method": "post",
+                "processData": false,
+                "contentType": false,
+                "mimeType": "multipart/form-data",
+                "data": form
+            }
+
+            $.ajax(settings).done(function (response) {
+                document.write(response)
+            })
+        }
+
+        function ThemeNamesByQuery() {
+            $.ajax({
+                url: 'https://developers.onemap.sg/privateapi/themesvc/getAllThemesInfo?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMxNjksInVzZXJfaWQiOjMxNjksImVtYWlsIjoic2hpdmFwcml5YS5zZy5zbGFAZ21haWwuY29tIiwiZm9yZXZlciI6ZmFsc2UsImlzcyI6Imh0dHA6XC9cL29tMi5kZmUub25lbWFwLnNnXC9hcGlcL3YyXC91c2VyXC9zZXNzaW9uIiwiaWF0IjoxNjAyNDcxNjI0LCJleHAiOjE2MDI5MDM2MjQsIm5iZiI6MTYwMjQ3MTYyNCwianRpIjoiNzJlZGJhNDVmZjc0MmVlZDAyNjA3MDZhM2M0ZjQ4NTYifQ.Epzr1btCzuaYJYXq5oxXuQXN-AEJkGA3J3GY-T_de04&queryName=kindergartens',
+                success: function (result) {
+                    //Set result to a variable for writing
+                    var TrueResult = JSON.stringify(result);
+                    document.write(TrueResult);
+                }
+            });
+        }
+
+        function fire(data) {
+
+            var settings = {
+                async: true,
+                crossDomain: true,
+                url: "https://developers.onemap.sg/privateapi/auth/post/getToken",
+                type: 'json',
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Origin, Authorization, X-Requested-With, Accept",
+                    "Access-Control-Allow-Methods": 'GET, PUT, POST, DELETE, OPTIONS',
+                    "Access-Controls-Allow-Credentials": 'true',
+                },
+                method: "POST",
+                processData: false,
+                contentType: "application/json",
+                mimeType: "application/x-www-form-urlencoded",
+                data: '{"email": "182558z@mymail.nyp.edu.sg","password": "Onemap123"}'
+            }
+
+            $.post(settings).done(function (response) {
+                document.write(JSON.stringify(response));
+            });
+        }
+    </script>
+</body>
+
+</html>
