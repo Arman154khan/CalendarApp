@@ -3,7 +3,7 @@
 
 <body>
 
-    <button style="height: 200px; width:200px;" onclick="fire3d()"></button>
+    <button style="height: 200px; width:200px;" onclick="fire()"></button>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -17,27 +17,6 @@
     </html>
 
     <script>
-
-        function fire3d(data) {
-            var form = new FormData()
-            form.append("email", "")
-            form.append("password", "")
-
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://www.onemap3d.gov.sg/privateapi/privateapi/auth/post/getToken",
-                "method": "post",
-                "processData": false,
-                "contentType": false,
-                "mimeType": "multipart/form-data",
-                "data": form
-            }
-
-            $.ajax(settings).done(function (response) {
-                document.write(response)
-            })
-        }
 
         function ThemeNamesByQuery() {
             $.ajax({
